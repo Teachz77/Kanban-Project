@@ -1,16 +1,28 @@
-import { useState } from 'react'
+import { useState, Suspense, lazy} from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SideMenu from './components/SideMenu'
+import { RecoilRoot } from 'recoil'
+import TaskSummary from './features/tasks/components/TaskSummary'
 
+const SideMenuLayout = lazy(() => import('./layouts/SideMenuLayout'))
 const router = createBrowserRouter([
   {
     path: '/',
     element: (
-    <div style={{ display: 'flex' }}>
-      <SideMenu />
-      <h1>Home</h1>
-    </div>
+      <Suspense fallback={<div>Loading</div>}>
+        <SideMenuLayout />
+      </Suspense>
     ),
+    children: [
+      {
+        path: '/',
+        element: (
+          <Suspense fallback={<div>Loading</div>}>
+            <TaskSummary />
+          </Suspense>
+        ),
+      },
+    ],
   },
   {
     path: 'task-list',
@@ -30,10 +42,16 @@ const router = createBrowserRouter([
     </div>
     ),
   },
+
+  
 ])
 
 function App(): JSX.Element {
-  return <RouterProvider router={router} />
+  return (
+    <RecoilRoot>
+      <RouterProvider router={router}/>
+    </RecoilRoot>
+  )
 }
 
 export default App
