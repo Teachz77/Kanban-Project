@@ -1,8 +1,10 @@
-import { useState, Suspense, lazy} from 'react'
+import { Suspense, lazy} from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SideMenu from './components/SideMenu'
+// import SideMenu from './components/SideMenu'
 import { RecoilRoot } from 'recoil'
 import TaskSummary from './features/tasks/components/TaskSummary'
+import TaskList from './features/tasks/components/TaskList/TaskList'
+import TaskProgress from './features/tasks/components/TaskProgress/TaskProgress'
 
 const SideMenuLayout = lazy(() => import('./layouts/SideMenuLayout'))
 const router = createBrowserRouter([
@@ -22,28 +24,16 @@ const router = createBrowserRouter([
           </Suspense>
         ),
       },
+      {
+        path: '/task-list',
+        element: <TaskList />
+      },
+      {
+        path: '/task-progress',
+        element: <TaskProgress />
+      },
     ],
   },
-  {
-    path: 'task-list',
-    element: (
-    <div style={{ display: 'flex' }}>
-      <SideMenu />
-      <h1>Task List</h1>
-    </div>
-    ),
-  },
-  {
-    path: 'task-progress',
-    element: (
-    <div style={{ display: 'flex' }}>
-      <SideMenu />
-      <h1>Task Progress</h1>
-    </div>
-    ),
-  },
-
-  
 ])
 
 function App(): JSX.Element {
