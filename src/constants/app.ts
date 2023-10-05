@@ -16,3 +16,9 @@ export const TASK_MODAL_TYPE = {
     ADD: 'add',
     EDIT: 'edit',
 }
+
+// export const TASK_FILTER = {
+//     ALL: 'all',
+//     COMPLETED: 'completed',
+//     UNCOMPLETED: 'uncompleted',
+// }

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import TaskMenu from '../shared/TaskMenu'
 import { useTasksAction } from '../../hooks/Tasks'
 import type { Task, CSSProperties } from '../../../../types'
 import { TASK_PROGRESS_ID, TASK_PROGRESS_STATUS } from '../../../../constants/app'
@@ -36,7 +37,10 @@ const getProgressCategory = (progressOrder: number): string => {
 }
 
 const TaskListItem = ({ task }: TaskListItemProps): JSX.Element => {
+
     const {completeTask} = useTasksAction()
+    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+    
     return (
         <div style={styles.tableBody}>
             <div style={styles.tableBodyTaskTitle}>
@@ -51,15 +55,13 @@ const TaskListItem = ({ task }: TaskListItemProps): JSX.Element => {
             <div style={styles.tableBodyDueDate}>
                 {task.dueDate}
             </div>
-            {/* <div style={styles.tableBodyProgress}>
-                {task.progressOrder}
-            </div> */}
             <div style={styles.tableBodyProgress}>
                 {getProgressCategory(task.progressOrder)}
             </div>
             <div>
-                <span className="material-icons" style={styles.menuIcon}>more_horiz</span>
+                <span className="material-icons" style={styles.menuIcon} onClick={(): void => {setIsMenuOpen(true)}}>more_horiz</span>
             </div>
+            {isMenuOpen && <TaskMenu setIsMenuOpen={setIsMenuOpen} task={task}/>}
         </div>
     )
 }

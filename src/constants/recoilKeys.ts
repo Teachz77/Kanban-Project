@@ -1,5 +1,6 @@
 export const AtomKeys = {
-    TASKS: 'tasks'
+    TASKS: 'tasks',
+    // TASK_FILTER: 'tasks',
 }
 
 export const SelectorKeys = {
@@ -8,4 +9,5 @@ export const SelectorKeys = {
     IN_PROGRESS_TASKS: 'inProgressTasks',
     WAITING_TASKS: 'waitingTasks',
     COMPLETED_TASKS: 'completedTasks',
+    // FILTERED_TASKS: 'completedTasks',
 }
