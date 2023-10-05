@@ -34,7 +34,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+],
+{basename: '/kanban-app/'}, // Nama repository ditambahkan
+)
 
 function App(): JSX.Element {
   return (
