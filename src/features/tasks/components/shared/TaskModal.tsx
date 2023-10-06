@@ -6,7 +6,7 @@ interface TaskModalProps {
     headingTitle: string
     type: string
     task?: Task
-    setIsMenuOpen: Dispatch<SetStateAction<boolean>>
+    // setIsMenuOpen: Dispatch<SetStateAction<boolean>>
     setIsModalOpen: Dispatch<SetStateAction<boolean>>
     defaultProgressOrder: number
 }
@@ -16,7 +16,7 @@ const TaskModal = ({
     type,
     task,
     setIsModalOpen,
-    setIsMenuOpen, 
+    // setIsMenuOpen, 
     defaultProgressOrder,
 }: TaskModalProps): JSX.Element => {
     return (
@@ -32,7 +32,7 @@ const TaskModal = ({
                 type={type} 
                 defaultProgressOrder={defaultProgressOrder} 
                 setIsModalOpen={setIsModalOpen}
-                setIsMenuOpen={setIsMenuOpen}
+                // setIsMenuOpen={setIsMenuOpen}
                 task={task}
             />
         </div>
