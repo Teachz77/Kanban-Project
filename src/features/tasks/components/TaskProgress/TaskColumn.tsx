@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import TaskCard from './TaskCard'
 import TaskModal from '../shared/TaskModal'
 import type { Task, CSSProperties } from '../../../../types'
@@ -6,7 +6,7 @@ import { TASK_PROGRESS_ID, TASK_MODAL_TYPE } from '../../../../constants/app'
 
 interface TaskColumnProps {
     columnTitle: string
-    tasks: Task[]   
+    tasks: Task[]
 }
 
 const TaskColumn = ({ columnTitle, tasks,}: TaskColumnProps): JSX.Element => {

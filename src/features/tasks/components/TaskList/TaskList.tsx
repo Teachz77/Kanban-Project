@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import type { Task, CSSProperties } from '../../../../types'
 import { TASK_PROGRESS_ID, TASK_MODAL_TYPE } from '../../../../constants/app'
 import TaskFilterMenu from '../shared/TaskFilterMenu'

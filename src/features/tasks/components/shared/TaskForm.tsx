@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import {useState} from "react"
 import { TASK_PROGRESS_ID, TASK_PROGRESS_STATUS, TASK_MODAL_TYPE } from "../../../../constants/app"
 import type { Task, CSSProperties } from "../../../../types"
 import { useTasksAction } from "../../hooks/Tasks"
