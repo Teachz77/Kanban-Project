@@ -70,7 +70,7 @@ const TaskList = (): JSX.Element => {
                     headingTitle="Add your Task"
                     type={TASK_MODAL_TYPE.ADD}
                     setIsModalOpen={setIsModalOpen}
-                    setIsMenuOpen={setIsMenuOpen}
+                    // setIsMenuOpen={setIsMenuOpen}
                     defaultProgressOrder={TASK_PROGRESS_ID.NOT_STARTED}
                 />
             )}

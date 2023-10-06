@@ -11,7 +11,7 @@ interface TaskColumnProps {
 
 const TaskColumn = ({ columnTitle, tasks,}: TaskColumnProps): JSX.Element => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-    const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+    // const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
     return (
         <div style={styles.categoryColumn}>
@@ -31,7 +31,7 @@ const TaskColumn = ({ columnTitle, tasks,}: TaskColumnProps): JSX.Element => {
                     headingTitle="Add your Task"
                     type={TASK_MODAL_TYPE.ADD}
                     setIsModalOpen={setIsModalOpen}
-                    setIsMenuOpen={setIsMenuOpen}
+                    // setIsMenuOpen={setIsMenuOpen}
                     defaultProgressOrder={TASK_PROGRESS_ID.NOT_STARTED}
                 />
             )}
